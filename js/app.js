@@ -1,6 +1,5 @@
 //* SELECTORES:
 
-const contenedor = document.querySelector('.grid');
 const formulario = document.querySelector('form');
 const btnOpciones = document.querySelector('#opciones');
 const grid = document.querySelector('.grid');
@@ -89,12 +88,12 @@ function mostrarChuches(){
 
 }
 
-
-
 formulario.addEventListener('submit', comprarChu);
 
 
 btnOpciones.addEventListener('click', administrarMaq);
+
+
 
 //* FUNCIONES:
 
@@ -146,9 +145,10 @@ function comprarChu(e){
         alert('La chuchería solicitada está agotada.\nPor favor retire su dinero o elija otra chucheria');
     }
 
-    //chuAgotadas();
 
     mostrarChuches();
+
+    scroll();
     
 }
 
@@ -165,14 +165,14 @@ function administrarMaq(e){
                 
                 case 1:
                     //RECARGAR MAQUINA:
-                    cambio = prompt('indique el ID de la chucheria que quiere recargar');
-                    let requestFill = chucherias.some(i => i.id === cambio && i.cantidad < 10);
+                    cambio = prompt('indique el NOMBRE de la chucheria que quiere recargar');
+                    let requestFill = chucherias.some(i => i.nombre === cambio && i.cantidad < 10);
 
                     if(requestFill){
                         llenar = prompt('indique la CANTIDAD de chuchería a rellenar');
 
                         const refObj = {
-                            id: cambio,
+                            nombre: cambio,
                             cantidad: Number(llenar)
                         }
 
@@ -188,7 +188,7 @@ function administrarMaq(e){
                                 let cantActual = ref.cantidad;
     
                                 vacioArray.forEach(relleno => {
-                                    if (relleno.id === ref.id)
+                                    if (relleno.nombre === ref.nombre)
                                         cantRefill = relleno.cantidad;
                                 })
                                     ref.cantidad = cantActual + cantRefill;
@@ -256,8 +256,8 @@ function limpiarHTML(){
     }
 }
 
-function scrollBottom(){
+function scroll(){
     setTimeout(() => {
         formulario.scrollIntoView();
-    }, 800); 
+    }, 300); 
 }

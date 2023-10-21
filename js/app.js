@@ -50,14 +50,14 @@ function mostrarChuches(){
         }
 
         const imagen = document.createElement('img');
-        imagen.src = 'css/chuches/16.trululu.jfif';
+        imagen.src = `css/chuches/${i.id}.png`;
 
         const nombre = document.createElement('p');
         nombre.textContent = i.nombre;
         nombre.classList.add('nombre');
 
         const precio = document.createElement('p');
-        precio.textContent = i.precio;
+        precio.textContent = '$'+i.precio;
         precio.classList.add('precio');
 
         fila.appendChild(input);

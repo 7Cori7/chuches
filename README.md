@@ -4,7 +4,7 @@ Es un ejercicio que simula una máquina expendedora de chucherias.
 
 Lo realicé con javaScript, HTML y CSS.
 
-Este ejercicio simula todas las funcionalidades de una máquina dispensadora:
+Este ejercicio simula todas las funcionalidades de una máquina expendedora:
 - Arreglo JSON con los productos, su precio, su cantidad, etc.
 - Al elegir una chuchería y confirmar la compra esta se sustrae (la cantidad) del arreglo.
 - Si la cantidad queda en 0, se impirme en pantalla un indicador (borde rojo) para decirle al usuario que no hay chuchería. Además de que ya no le puede hacer click.
